@@ -1,0 +1,41 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Desinfección del Reservorio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+
+  <form [formGroup]="desinfeccion_form" (ngSubmit)="onSubmit(desinfeccion_form.value)">
+
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Volumen del Reservorio (Litros)</ion-label>
+        <ion-input formControlName="v_reservorio" type="number">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-text-wrap" position="stacked">Concentración Deseada del Reservorio (miligramos por litro)</ion-label>
+        <ion-input formControlName="c_reservorio" type="number" placeholder="ejemplos: 1.0 o 1.5"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Porcentaje de Cloro</ion-label>
+        <ion-input formControlName="p_cloro" type="number" placeholder="ejemplos: 65 o 70">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-text color="success">
+  			<h3>{{desinfeccion_value}}</h3>
+  		</ion-text>
+    </ion-item>
+
+    <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!desinfeccion_form.valid">Calcular</ion-button>
+
+  </form>
+
+</ion-content>

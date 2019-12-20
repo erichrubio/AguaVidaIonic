@@ -1,0 +1,35 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Volumen de Tanque (Cilindro)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+
+  <form [formGroup]="vr_cilindro_form" (ngSubmit)="onSubmit(vr_cilindro_form.value)">
+
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Diametro del tanque (metros)</ion-label>
+        <ion-input formControlName="diametro_t" type="number">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Altura del tanque (metros)</ion-label>
+        <ion-input formControlName="altura_t" type="number">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-text color="success">
+  			<h3>{{vr_cilindro_value}}</h3>
+  		</ion-text>
+    </ion-item>
+
+    <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!vr_cilindro_form.valid">Calcular</ion-button>
+
+  </form>

@@ -1,0 +1,47 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Peso de Cloro (Autocompensante)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+
+  <form [formGroup]="peso_auto_form" (ngSubmit)="onSubmit(peso_auto_form.value)">
+
+    <ion-list>
+      <ion-item>
+          <ion-label class="ion-text-wrap" position="stacked">Litros del Tanque de Solución Madre</ion-label>
+          <ion-input formControlName="t_solucion" type="number">
+          </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Caudal (litros por segundo)</ion-label>
+          <ion-input formControlName="caudal" type="number">
+          </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label class="ion-text-wrap" position="stacked">Concentración Deseada del Reservorio (miligramos por litro)</ion-label>
+          <ion-input formControlName="c_reservorio" type="number" placeholder="ejemplos: 1.0 o 1.5">
+          </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Porcentaje de Cloro</ion-label>
+          <ion-input formControlName="p_cloro" type="number" placeholder="ejemplos: 65 o 70">
+          </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-text color="success">
+  			<h3>{{peso_auto_value}}</h3>
+  		</ion-text>
+    </ion-item>
+
+    <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!peso_auto_form.valid">Calcular</ion-button>
+
+  </form>
+
+</ion-content>

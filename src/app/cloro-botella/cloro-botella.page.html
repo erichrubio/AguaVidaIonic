@@ -1,0 +1,46 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Peso de Cloro en Botella</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+
+  <form [formGroup]="botella_form" (ngSubmit)="onSubmit(botella_form.value)">
+
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Densidad de cloro (g/mL)</ion-label>
+        <ion-input formControlName="densidad" type="number">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Tamaño de botella (litros)</ion-label>
+        <ion-input formControlName="tamano" type="number" placeholder="ejemplos: 0.6, 1 o 1.5"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-text color="success">
+  			<h3>{{botella_value_1}}</h3>
+  		</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text color="success">
+  			<h3>{{botella_value_2}}</h3>
+  		</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text color="success">
+  			<h3>{{botella_value_3}}</h3>
+  		</ion-text>
+    </ion-item>
+
+    <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!botella_form.valid">Calcular</ion-button>
+
+  </form>
+
+</ion-content>

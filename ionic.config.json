@@ -1,5 +1,8 @@
 {
   "name": "agua_vida_ionic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

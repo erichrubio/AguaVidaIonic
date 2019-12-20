@@ -1,0 +1,37 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rapidez de Goteo (Goteos)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+
+  <form [formGroup]="rapidez_goteos_form" (ngSubmit)="onSubmit(rapidez_goteos_form.value)">
+
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Litros del Tanque de Solución Madre</ion-label>
+        <ion-input formControlName="l_solucion" type="number">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Días de Recarga</ion-label>
+        <ion-input formControlName="d_recarga" type="number">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-text color="success">
+  			<h3>{{rapidez_goteos_value}}</h3>
+  		</ion-text>
+    </ion-item>
+
+    <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!rapidez_goteos_form.valid">Calcular</ion-button>
+
+  </form>
+
+</ion-content>

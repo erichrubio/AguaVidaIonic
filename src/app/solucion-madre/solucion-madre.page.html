@@ -1,0 +1,42 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Concentración de Solución Madre</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+
+  <form [formGroup]="c_solucion_form" (ngSubmit)="onSubmit(c_solucion_form.value)">
+
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Litros del Tanque de Solución Madre</ion-label>
+        <ion-input formControlName="l_solucion" type="number">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Peso de Cloro (gramos)</ion-label>
+        <ion-input formControlName="peso_cloro" type="number">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Porcentaje de Cloro</ion-label>
+        <ion-input formControlName="p_cloro" type="number" placeholder="ejemplos: 65 o 70">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-text color="success">
+  			<h3>{{c_solucion_value}}</h3>
+  		</ion-text>
+    </ion-item>
+
+    <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!c_solucion_form.valid">Calcular</ion-button>
+
+  </form>
+
+</ion-content>

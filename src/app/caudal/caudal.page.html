@@ -1,0 +1,45 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Caudal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+  <form [formGroup]="caudal_form" (ngSubmit)="onSubmit(caudal_form.value)">
+
+    <ion-list>
+      <ion-item>
+          <ion-label position="floating">Litros del balde o botella</ion-label>
+          <ion-input formControlName="balde" type="number">
+          </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Tiempo 1 (segundos)</ion-label>
+          <ion-input formControlName="t1" type="number">
+          </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Tiempo 2 (segundos)</ion-label>
+          <ion-input formControlName="t2" type="number">
+          </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Tiempo 3 (segundos)</ion-label>
+          <ion-input formControlName="t3" type="number">
+          </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-text color="success">
+  			<h3>{{caudal_value}}</h3>
+  		</ion-text>
+    </ion-item>
+
+    <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!caudal_form.valid">Calcular</ion-button>
+
+  </form>
+</ion-content>
