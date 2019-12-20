@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1576763801106,
+  "timestamp": 1576862545802,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -220,6 +220,9 @@
         "/99-es5.70de6c9deb2b31b08a07.js",
         "/common-es2015.6a6dc0f6126c7229d661.js",
         "/common-es5.ec090b27076ba1870874.js",
+        "/cordova.22d0b106f4dfd80eb9b7.js",
+        "/cordova.js",
+        "/cordova_plugins.js",
         "/index.html",
         "/main-es2015.2f5c89fc62f203bef1dd.js",
         "/main-es5.7c705cccd2f26dc31769.js",
@@ -476,7 +479,10 @@
     "/assets/shapes.svg": "5413e95adabcb2cb639970051f55e0ddb64ace53",
     "/common-es2015.6a6dc0f6126c7229d661.js": "ff7f7471a50c00dc36e8a97a0f0b43c0a3fd64f2",
     "/common-es5.ec090b27076ba1870874.js": "29730a29e87c2824edd7a769a16f8d6f0c50be97",
-    "/index.html": "59bc541bd781110f45b629a362f8ac4ef1381f9b",
+    "/cordova.22d0b106f4dfd80eb9b7.js": "829533ed01c2c3874e8a09c145256fd09b3ff922",
+    "/cordova.js": "4b50ce85e4b4bb6af24b70646298975755d44daa",
+    "/cordova_plugins.js": "1e223a5a0bac7baf01988a022bcff064a1cdbae2",
+    "/index.html": "92914f794539d9d643616abdeb47c73162640b57",
     "/main-es2015.2f5c89fc62f203bef1dd.js": "b3d419857b409a23188342add899487f4bb52843",
     "/main-es5.7c705cccd2f26dc31769.js": "45611865bbac7ac084f592a6d4dfa9a75098a66e",
     "/polyfills-es2015.1eb29e11fdef65ca4e6e.js": "7fc26158a2fd7f9d37ce975a9a2e47aa9370af1c",
