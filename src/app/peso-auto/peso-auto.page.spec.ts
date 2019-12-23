@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { PesoAutoPage } from './peso-auto.page';
 
@@ -10,7 +12,7 @@ describe('PesoAutoPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PesoAutoPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), ReactiveFormsModule, RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(PesoAutoPage);

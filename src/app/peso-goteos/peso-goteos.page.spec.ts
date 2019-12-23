@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { PesoGoteosPage } from './peso-goteos.page';
 
@@ -10,7 +12,7 @@ describe('PesoGoteosPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PesoGoteosPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), ReactiveFormsModule, RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(PesoGoteosPage);
