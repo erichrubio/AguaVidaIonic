@@ -28,9 +28,12 @@ describe('CaudalPage', () => {
     const page = new CaudalPage();
     const v = { t1: 1 , t2: 1, t3: 1, balde: 1 };
     page.onSubmit(v);
-    expect(page.caudal_value).toBe(
+    expect(page.caudal_val).toBeCloseTo(
+      1, 1, 'all ones should work (val)'
+    )
+    expect(page.caudal_str).toBe(
       'Caudal = 1.0 litros por segundo',
-      'all ones should work'
+      'all ones should work (str)'
     );
   });
 });

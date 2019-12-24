@@ -11,7 +11,9 @@ export class DesinfeccionPage implements OnInit {
   public desinfeccion_form: FormGroup;
 
   // final value to display
-  public desinfeccion_value = "";
+  public desinfeccion_str: string = "";
+
+  public desinfeccion_val: number;
 
   constructor() { }
 
@@ -32,14 +34,14 @@ export class DesinfeccionPage implements OnInit {
     console.log('desinfeccion submit button clicked.');
     console.log(values);
 
-    let r = (
+    this.desinfeccion_val = (
       // liters * (mg/L) * 1g/1000mg = grams
       (values.v_reservorio * values.c_reservorio / 1000) /
       // change percent to decimal (no units)
       (values.p_cloro / 100)
     );
 
-    this.desinfeccion_value = r.toFixed(0) + " gramos";
+    this.desinfeccion_str = this.desinfeccion_val.toFixed(1) + " gramos";
   }
 
 }

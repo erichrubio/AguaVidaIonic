@@ -11,7 +11,9 @@ export class RapidezGoteosPage implements OnInit {
   public rapidez_goteos_form: FormGroup;
 
   // final value to display
-  public rapidez_goteos_value = "";
+  public rapidez_goteos_str: string = "";
+
+  public rapidez_goteos_val: number;
 
   constructor() { }
 
@@ -30,15 +32,14 @@ export class RapidezGoteosPage implements OnInit {
     console.log('rapidez_goteos submit button clicked.');
     console.log(values);
 
-    let ml_min = (
+    this.rapidez_goteos_val = (
       // size of solucion madre (mL)
       (values.l_solucion * 1000) /
       // convert days to minutes (min)
       (values.d_recarga * 24 * 60)
     )
-    let s_ml_min = ml_min.toFixed(1);
 
-    this.rapidez_goteos_value = s_ml_min + " mL cada minuto";
+    this.rapidez_goteos_str = this.rapidez_goteos_val.toFixed(1) + " mL cada minuto";
   }
 
 }

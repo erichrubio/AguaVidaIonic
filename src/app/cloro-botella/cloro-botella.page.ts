@@ -11,9 +11,11 @@ export class CloroBotellaPage implements OnInit {
   public botella_form: FormGroup;
 
   // final value to display
-  public botella_value_1 = "";
-  public botella_value_2 = "";
-  public botella_value_3 = "";
+  public botella_str_1 = "";
+  public botella_str_2 = "";
+  public botella_str_3 = "";
+
+  public botella_val: number;
 
   constructor() { }
 
@@ -32,14 +34,14 @@ export class CloroBotellaPage implements OnInit {
     console.log('botella submit button clicked.');
     console.log(values);
 
-    let r = (
+    this.botella_val = (
       // g/mL * L * 1000mL/1L = grams
       values.densidad * values.tamano * 1000
     );
 
-    this.botella_value_1 = r.toFixed(0) + " gramos llena";
-    this.botella_value_2 = (r/2).toFixed(0) + " gramos en la mitad";
-    this.botella_value_3 = (r/4).toFixed(0) + " gramos en el cuarto";
+    this.botella_str_1 = this.botella_val.toFixed(0) + " gramos llena";
+    this.botella_str_2 = (this.botella_val/2).toFixed(0) + " gramos en la mitad";
+    this.botella_str_3 = (this.botella_val/4).toFixed(0) + " gramos en el cuarto";
   }
 
 }

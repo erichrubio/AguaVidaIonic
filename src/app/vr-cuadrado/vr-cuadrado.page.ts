@@ -11,7 +11,9 @@ export class VrCuadradoPage implements OnInit {
   public vr_cubo_form: FormGroup;
 
   // final value to display
-  public vr_cubo_value = "";
+  public vr_cubo_str: string = "";
+
+  public vr_cubo_val: number;
 
   constructor() { }
 
@@ -33,10 +35,10 @@ export class VrCuadradoPage implements OnInit {
     console.log(values);
 
     let meters = values.largo_t * values.ancho_t * values.altura_t;
-    let liters = meters * 1000;
+    this.vr_cubo_val = meters * 1000;
 
 
-    this.vr_cubo_value = liters.toFixed(0) + " litros";
+    this.vr_cubo_str = this.vr_cubo_val.toFixed(0) + " litros";
   }
 
 }

@@ -11,7 +11,9 @@ export class CaudalPage implements OnInit {
   public caudal_form: FormGroup;
 
   // final value to display
-  public caudal_value = "";
+  public caudal_str: string = "";
+
+  public caudal_val: number;
 
   constructor(
 
@@ -32,8 +34,9 @@ export class CaudalPage implements OnInit {
 
     var m = values.balde / ((values.t1 + values.t2 + values.t3) / 3) ;
     console.log(m);
+    this.caudal_val = m;
 
-    this.caudal_value = "Caudal = " + m.toFixed(1) + " litros por segundo";
+    this.caudal_str = "Caudal = " + this.caudal_val.toFixed(1) + " litros por segundo";
   }
 
 }

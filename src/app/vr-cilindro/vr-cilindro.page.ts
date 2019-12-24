@@ -11,7 +11,9 @@ export class VrCilindroPage implements OnInit {
   public vr_cilindro_form: FormGroup;
 
   // final value to display
-  public vr_cilindro_value = "";
+  public vr_cilindro_str: string = "";
+
+  public vr_cilindro_val: number;
 
   constructor() { }
 
@@ -33,10 +35,10 @@ export class VrCilindroPage implements OnInit {
     let radius = (values.diametro_t / 2);
     let meters = Math.PI * (radius * radius) * values.altura_t;
     console.log(meters);
-    let liters = meters * 1000;
+    this.vr_cilindro_val = meters * 1000;
 
 
-    this.vr_cilindro_value = liters.toFixed(0) + " litros";
+    this.vr_cilindro_str = this.vr_cilindro_val.toFixed(0) + " litros";
   }
 
 }

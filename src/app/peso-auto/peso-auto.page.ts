@@ -11,7 +11,9 @@ export class PesoAutoPage implements OnInit {
   public peso_auto_form: FormGroup;
 
   // final value to display
-  public peso_auto_value = "";
+  public peso_auto_str: string = "";
+
+  public peso_auto_val: number;
 
   constructor(
 
@@ -48,13 +50,11 @@ export class PesoAutoPage implements OnInit {
     // kg to grams
     r = r * 1000
 
+    this.peso_auto_val = r;
+
     let dias = v / (g * 24);
 
-    let peso:string = "Peso de cloro = " + r.toFixed(0) + " gramos cada " + dias.toFixed(1) + " días";
-
-    console.log(peso);
-
-    this.peso_auto_value = peso;
+    this.peso_auto_str = "Peso de cloro = " + r.toFixed(0) + " gramos cada " + dias.toFixed(1) + " días";
   }
 
 }

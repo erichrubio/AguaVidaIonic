@@ -11,7 +11,9 @@ export class PesoGoteosPage implements OnInit {
   public peso_goteos_form: FormGroup;
 
   // final value to display
-  public peso_goteos_value = "";
+  public peso_goteos_str: string = "";
+
+  public peso_goteos_val: number;
 
   constructor(
 
@@ -37,11 +39,13 @@ export class PesoGoteosPage implements OnInit {
     console.log(values);
     var d = values.dias;
 
-    var r = (
+    this.peso_goteos_val = (
       // volume of water in a day (L)
       (values.caudal * 24 * 60 * 60) *
       // desired concentration (mg/L)
-      values.c_reservorio
+      values.c_reservorio *
+      // adjust for dias de recarga
+      d
     ) /
     (
       // proportion of cloro (changed from percent to proportion)
@@ -50,14 +54,10 @@ export class PesoGoteosPage implements OnInit {
       1000
     );
 
-    // adjust for dias de recarga
-    r = r * d;
-    console.log(r);
-
     let s_dias = "" + d + " dias";
     if(d == 1) { s_dias = "dia" }
 
-    this.peso_goteos_value = "Peso de cloro = " + Math.round(r) + " gramos cada " + s_dias;
+    this.peso_goteos_str = "Peso de cloro = " + Math.round(this.peso_goteos_val) + " gramos cada " + s_dias;
   }
 
 }
