@@ -24,7 +24,7 @@ describe('CaudalPage', () => {
     expect(component).toBeTruthy();
   });
 
-  it('#onSubmit one case should be one', () => {
+  it('#onSubmit all ones case should be one', () => {
     const page = new CaudalPage();
     const v = { t1: 1 , t2: 1, t3: 1, balde: 1 };
     page.onSubmit(v);
@@ -34,6 +34,19 @@ describe('CaudalPage', () => {
     expect(page.caudal_str).toBe(
       'Caudal = 1.0 litros por segundo',
       'all ones should work (str)'
+    );
+  });
+
+  it('#onSubmit basic test case should work', () => {
+    const page = new CaudalPage();
+    const v = { t1: 5 , t2: 6, t3: 9, balde: 20 };
+    page.onSubmit(v);
+    expect(page.caudal_val).toBeCloseTo(
+      3, 1, 'value should be correct'
+    )
+    expect(page.caudal_str).toBe(
+      'Caudal = 3.0 litros por segundo',
+      'label should be correct'
     );
   });
 });

@@ -23,4 +23,30 @@ describe('PesoGoteosPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('#onSubmit basic test case should work', () => {
+    const page = new PesoGoteosPage();
+    const v = { caudal: 3, c_reservorio: 2, p_cloro: 70, dias: 1 };
+    page.onSubmit(v);
+    expect(page.peso_goteos_val).toBeCloseTo(
+      740.6, 1, 'value should be correct'
+    )
+    expect(page.peso_goteos_str).toBe(
+      'Peso de cloro = 741 gramos cada día',
+      'label should be correct'
+    );
+  });
+
+  it('#onSubmit one-week test case should work', () => {
+    const page = new PesoGoteosPage();
+    const v = { caudal: 3, c_reservorio: 2, p_cloro: 70, dias: 7 };
+    page.onSubmit(v);
+    expect(page.peso_goteos_val).toBeCloseTo(
+      5184.2, 0, 'value should be correct'
+    )
+    expect(page.peso_goteos_str).toBe(
+      'Peso de cloro = 5184 gramos cada 7 días',
+      'label should be correct'
+    );
+  });
 });

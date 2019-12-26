@@ -23,4 +23,17 @@ describe('PesoAutoPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('#onSubmit basic test case should work', () => {
+    const page = new PesoAutoPage();
+    const v = { t_solucion: 150, caudal: 3, c_reservorio: 1.5, p_cloro: 70 };
+    page.onSubmit(v);
+    expect(page.peso_auto_val).toBeCloseTo(
+      868, 0, 'value should be correct'
+    )
+    expect(page.peso_auto_str).toBe(
+      'Peso de cloro = 868 gramos cada 1.6 días',
+      'label should be correct'
+    );
+  });
 });

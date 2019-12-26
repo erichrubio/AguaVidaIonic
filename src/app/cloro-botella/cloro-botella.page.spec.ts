@@ -23,4 +23,17 @@ describe('CloroBotellaPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('#onSubmit basic test case should work', () => {
+    const page = new CloroBotellaPage();
+    const v = { densidad: 1.5, tamano: 0.6 };
+    page.onSubmit(v);
+    expect(page.botella_val).toBeCloseTo(
+      900, 1, 'value should be correct'
+    )
+    expect(page.botella_str_1).toBe(
+      '900 gramos llena',
+      'label should be correct'
+    );
+  });
 });

@@ -23,4 +23,17 @@ describe('VrCuadradoPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('#onSubmit basic test case should work', () => {
+    const page = new VrCuadradoPage();
+    const v = { largo_t: 2, ancho_t: 3, altura_t: 4 };
+    page.onSubmit(v);
+    expect(page.vr_cubo_val).toBeCloseTo(
+      24000, 0, 'value should be correct'
+    )
+    expect(page.vr_cubo_str).toBe(
+      '24000 litros',
+      'label should be correct'
+    );
+  });
 });

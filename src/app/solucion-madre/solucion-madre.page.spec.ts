@@ -23,4 +23,17 @@ describe('SolucionMadrePage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('#onSubmit basic test case should work', () => {
+    const page = new SolucionMadrePage();
+    const v = { l_solucion: 150, peso_cloro: 120, p_cloro: 70 };
+    page.onSubmit(v);
+    expect(page.c_solucion_val).toBeCloseTo(
+      560, 0, 'value should be correct'
+    )
+    expect(page.c_solucion_str).toBe(
+      '0.6 gramos/Litro o 560 miligramos/Litro - ppm',
+      'label should be correct'
+    );
+  });
 });

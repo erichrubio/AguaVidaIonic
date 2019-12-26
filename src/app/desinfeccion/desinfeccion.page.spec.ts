@@ -23,4 +23,17 @@ describe('DesinfeccionPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('#onSubmit basic test case should work', () => {
+    const page = new DesinfeccionPage();
+    const v = { v_reservorio: 2000, c_reservorio: 5, p_cloro: 70 };
+    page.onSubmit(v);
+    expect(page.desinfeccion_val).toBeCloseTo(
+      14.3, 1, 'value should be correct'
+    )
+    expect(page.desinfeccion_str).toBe(
+      '14.3 gramos',
+      'label should be correct'
+    );
+  });
 });

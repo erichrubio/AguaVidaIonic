@@ -23,4 +23,17 @@ describe('VrCilindroPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('#onSubmit basic test case should work', () => {
+    const page = new VrCilindroPage();
+    const v = { diametro_t: 8, altura_t: 9 };
+    page.onSubmit(v);
+    expect(page.vr_cilindro_val).toBeCloseTo(
+      452389, 0, 'value should be correct'
+    )
+    expect(page.vr_cilindro_str).toBe(
+      '452389 litros',
+      'label should be correct'
+    );
+  });
 });

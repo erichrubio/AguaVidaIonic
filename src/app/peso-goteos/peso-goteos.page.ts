@@ -54,8 +54,8 @@ export class PesoGoteosPage implements OnInit {
       1000
     );
 
-    let s_dias = "" + d + " dias";
-    if(d == 1) { s_dias = "dia" }
+    let s_dias = "" + d + " días";
+    if(d == 1) { s_dias = "día" }
 
     this.peso_goteos_str = "Peso de cloro = " + Math.round(this.peso_goteos_val) + " gramos cada " + s_dias;
   }
