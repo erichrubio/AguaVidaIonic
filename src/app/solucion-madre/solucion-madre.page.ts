@@ -19,9 +19,18 @@ export class SolucionMadrePage implements OnInit {
 
   ngOnInit() {
     this.c_solucion_form = new FormGroup({
-      l_solucion: new FormControl(null, Validators.required),
-      peso_cloro: new FormControl(null, Validators.required),
-      p_cloro:  new FormControl(null, Validators.required)
+      l_solucion: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      peso_cloro: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      p_cloro: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ]))
     })
   }
 

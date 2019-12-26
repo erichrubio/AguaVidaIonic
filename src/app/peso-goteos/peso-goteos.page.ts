@@ -21,10 +21,22 @@ export class PesoGoteosPage implements OnInit {
 
   ngOnInit() {
     this.peso_goteos_form = new FormGroup({
-      caudal: new FormControl(null, Validators.required),
-      c_reservorio: new FormControl(null, Validators.required),
-      p_cloro: new FormControl(null, Validators.required),
-      dias: new FormControl(null, Validators.required)
+      caudal: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      c_reservorio: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      p_cloro: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      dias: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ]))
     })
   }
 

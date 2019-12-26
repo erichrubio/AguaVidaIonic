@@ -21,8 +21,14 @@ export class CloroBotellaPage implements OnInit {
 
   ngOnInit() {
     this.botella_form = new FormGroup({
-      densidad: new FormControl(null, Validators.required),
-      tamano: new FormControl(null, Validators.required)
+      densidad: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      tamano: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ]))
     })
   }
 

@@ -21,10 +21,22 @@ export class PesoAutoPage implements OnInit {
 
   ngOnInit() {
     this.peso_auto_form = new FormGroup({
-      t_solucion: new FormControl(null, Validators.required),
-      caudal: new FormControl(null, Validators.required),
-      c_reservorio: new FormControl(null, Validators.required),
-      p_cloro: new FormControl(null, Validators.required)
+      t_solucion: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      caudal: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      c_reservorio: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      p_cloro: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ]))
     })
   }
 

@@ -19,9 +19,18 @@ export class DesinfeccionPage implements OnInit {
 
   ngOnInit() {
     this.desinfeccion_form = new FormGroup({
-      v_reservorio: new FormControl(null, Validators.required),
-      c_reservorio: new FormControl(null, Validators.required),
-      p_cloro:  new FormControl(null, Validators.required)
+      v_reservorio: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      c_reservorio: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      p_cloro: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ]))
     })
   }
 

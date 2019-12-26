@@ -21,10 +21,22 @@ export class CaudalPage implements OnInit {
 
   ngOnInit() {
     this.caudal_form = new FormGroup({
-      balde: new FormControl(null, Validators.required),
-      t1: new FormControl(null, Validators.required),
-      t2: new FormControl(null, Validators.required),
-      t3: new FormControl(null, Validators.required)
+      balde: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      t1: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      t2: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      t3: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ]))
     })
   }
 

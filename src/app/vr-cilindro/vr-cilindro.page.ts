@@ -19,8 +19,14 @@ export class VrCilindroPage implements OnInit {
 
   ngOnInit() {
     this.vr_cilindro_form = new FormGroup({
-      diametro_t: new FormControl(null, Validators.required),
-      altura_t:  new FormControl(null, Validators.required)
+      diametro_t: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      altura_t: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ]))
     })
   }
 

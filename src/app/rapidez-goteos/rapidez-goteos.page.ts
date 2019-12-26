@@ -19,8 +19,14 @@ export class RapidezGoteosPage implements OnInit {
 
   ngOnInit() {
     this.rapidez_goteos_form = new FormGroup({
-      l_solucion: new FormControl(null, Validators.required),
-      d_recarga: new FormControl(null, Validators.required)
+      l_solucion: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      d_recarga: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ]))
     })
   }
 

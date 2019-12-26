@@ -19,9 +19,18 @@ export class VrCuadradoPage implements OnInit {
 
   ngOnInit() {
     this.vr_cubo_form = new FormGroup({
-      largo_t: new FormControl(null, Validators.required),
-      ancho_t: new FormControl(null, Validators.required),
-      altura_t:  new FormControl(null, Validators.required)
+      largo_t: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      ancho_t: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ])),
+      altura_t: new FormControl(null, Validators.compose([
+        Validators.required,
+        Validators.min(0.001)
+      ]))
     })
   }
 
