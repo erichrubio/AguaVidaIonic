@@ -48,6 +48,10 @@ const routes: Routes = [
     path: 'cloro-botella',
     loadChildren: () => import('./cloro-botella/cloro-botella.module').then( m => m.CloroBotellaPageModule)
   },
+  {
+    path: 'estimacion-rapidez',
+    loadChildren: () => import('./estimacion-rapidez/estimacion-rapidez.module').then( m => m.EstimacionRapidezPageModule)
+  },
 ];
 
 @NgModule({

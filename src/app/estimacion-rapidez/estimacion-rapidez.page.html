@@ -1,0 +1,35 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Estimación de Rapidez de Goteo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+  <form [formGroup]="estimacion_rapidez_form" (ngSubmit)="onSubmit(estimacion_rapidez_form.value)">
+
+    <ion-list>
+      <ion-item>
+          <ion-label position="floating">Tamaño de medidor (mililitros)</ion-label>
+          <ion-input formControlName="tamano" type="number">
+          </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Segundos para llenar</ion-label>
+          <ion-input formControlName="segundos" type="number">
+          </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-text color="success">
+  			<h3>{{estimacion_str}}</h3>
+  		</ion-text>
+    </ion-item>
+
+    <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!estimacion_rapidez_form.valid">Calcular</ion-button>
+
+  </form>
+</ion-content>
