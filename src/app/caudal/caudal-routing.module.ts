@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: CaudalPage
+  },
+  {
+    path: 'info',
+    loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
   }
 ];
 

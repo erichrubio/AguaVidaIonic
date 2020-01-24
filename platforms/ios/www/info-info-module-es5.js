@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header translucent>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button defaultHref=\"/\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>Información</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content fullscreen class=\"ion-padding\">\n  <p>Esta aplicación es creado por Stephen Chan y Eric Rubio.</p>\n</ion-content>\n"
+module.exports = "<ion-header translucent>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button defaultHref=\"/\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>Información</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content fullscreen class=\"ion-padding\">\n  <p>Bienvenido a AguaVida. Esta aplicación hace varias calculaciones\n    para facilitar el proceso de cloración de agua. Para empezar, escoja\n    un botón en la página principal.</p>\n  <p>Esta aplicación fue creado por Stephen Chan y Eric Rubio.</p>\n</ion-content>\n"
 
 /***/ }),
 

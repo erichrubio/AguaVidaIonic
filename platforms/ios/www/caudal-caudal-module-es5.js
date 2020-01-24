@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header translucent>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button defaultHref=\"/\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>Caudal</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content fullscreen class=\"ion-padding\">\n  <form [formGroup]=\"caudal_form\" (ngSubmit)=\"onSubmit(caudal_form.value)\">\n\n    <ion-list>\n      <ion-item>\n          <ion-label position=\"floating\">Litros del balde</ion-label>\n          <ion-input formControlName=\"balde\" type=\"number\">\n          </ion-input>\n      </ion-item>\n      <ion-item>\n          <ion-label position=\"floating\">Tiempo 1 (segundos)</ion-label>\n          <ion-input formControlName=\"t1\" type=\"number\">\n          </ion-input>\n      </ion-item>\n      <ion-item>\n          <ion-label position=\"floating\">Tiempo 2 (segundos)</ion-label>\n          <ion-input formControlName=\"t2\" type=\"number\">\n          </ion-input>\n      </ion-item>\n      <ion-item>\n          <ion-label position=\"floating\">Tiempo 3 (segundos)</ion-label>\n          <ion-input formControlName=\"t3\" type=\"number\">\n          </ion-input>\n      </ion-item>\n    </ion-list>\n\n    <ion-item>\n      <ion-text color=\"success\">\n  \t\t\t{{caudal_value}}\n  \t\t</ion-text>\n    </ion-item>\n\n    <ion-button color=\"primary\" class=\"submit-btn\" expand=\"full\" type=\"submit\" [disabled]=\"!caudal_form.valid\">Calcular</ion-button>\n\n  </form>\n</ion-content>\n"
+module.exports = "<ion-header translucent>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button defaultHref=\"/\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>Caudal</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content fullscreen class=\"ion-padding\">\n  <form [formGroup]=\"caudal_form\" (ngSubmit)=\"onSubmit(caudal_form.value)\">\n\n    <ion-list>\n      <ion-item>\n          <ion-label position=\"floating\">Litros del balde o botella</ion-label>\n          <ion-input formControlName=\"balde\" type=\"number\">\n          </ion-input>\n      </ion-item>\n      <ion-item>\n          <ion-label position=\"floating\">Tiempo 1 (segundos)</ion-label>\n          <ion-input formControlName=\"t1\" type=\"number\">\n          </ion-input>\n      </ion-item>\n      <ion-item>\n          <ion-label position=\"floating\">Tiempo 2 (segundos)</ion-label>\n          <ion-input formControlName=\"t2\" type=\"number\">\n          </ion-input>\n      </ion-item>\n      <ion-item>\n          <ion-label position=\"floating\">Tiempo 3 (segundos)</ion-label>\n          <ion-input formControlName=\"t3\" type=\"number\">\n          </ion-input>\n      </ion-item>\n    </ion-list>\n\n    <ion-item>\n      <ion-text class=\"tint\" color=\"success\">\n  \t\t\t<h3>{{caudal_str}}</h3>\n  \t\t</ion-text>\n    </ion-item>\n\n    <ion-button color=\"primary\" class=\"submit-btn\" expand=\"full\" type=\"submit\" [disabled]=\"!caudal_form.valid\">Calcular</ion-button>\n\n  </form>\n</ion-content>\n"
 
 /***/ }),
 
@@ -127,14 +127,26 @@ __webpack_require__.r(__webpack_exports__);
 var CaudalPage = /** @class */ (function () {
     function CaudalPage() {
         // final value to display
-        this.caudal_value = "";
+        this.caudal_str = "";
     }
     CaudalPage.prototype.ngOnInit = function () {
         this.caudal_form = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
-            balde: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            t1: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            t2: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
-            t3: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+            balde: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0.001)
+            ])),
+            t1: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0.001)
+            ])),
+            t2: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0.001)
+            ])),
+            t3: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].min(0.001)
+            ]))
         });
     };
     CaudalPage.prototype.onSubmit = function (values) {
@@ -142,7 +154,8 @@ var CaudalPage = /** @class */ (function () {
         console.log(values);
         var m = values.balde / ((values.t1 + values.t2 + values.t3) / 3);
         console.log(m);
-        this.caudal_value = "Caudal = " + m.toFixed(1) + " litros por segundo";
+        this.caudal_val = m;
+        this.caudal_str = "Caudal = " + this.caudal_val.toFixed(1) + " litros por segundo";
     };
     CaudalPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

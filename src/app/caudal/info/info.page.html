@@ -1,0 +1,39 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Información</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+  <p>Caudal Info Page</p>
+
+  <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <ion-grid>
+          <h1>Slide 1</h1>
+          <ion-row>
+            <ion-col>
+              <img src="../assets/img/caudal_equals.svg">
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <img src="../assets/img/caudal_equals.svg">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 2</h1>
+        <br>
+        <img src="../assets/img/caudal_equals.svg">
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 3</h1>
+      </ion-slide>
+    </ion-slides>
+
+</ion-content>

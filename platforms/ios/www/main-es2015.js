@@ -472,6 +472,46 @@ const routes = [
         path: 'caudal',
         loadChildren: () => __webpack_require__.e(/*! import() | caudal-caudal-module */ "caudal-caudal-module").then(__webpack_require__.bind(null, /*! ./caudal/caudal.module */ "./src/app/caudal/caudal.module.ts")).then(m => m.CaudalPageModule)
     },
+    {
+        path: 'peso-goteos',
+        loadChildren: () => __webpack_require__.e(/*! import() | peso-goteos-peso-goteos-module */ "peso-goteos-peso-goteos-module").then(__webpack_require__.bind(null, /*! ./peso-goteos/peso-goteos.module */ "./src/app/peso-goteos/peso-goteos.module.ts")).then(m => m.PesoGoteosPageModule)
+    },
+    {
+        path: 'peso-auto',
+        loadChildren: () => __webpack_require__.e(/*! import() | peso-auto-peso-auto-module */ "peso-auto-peso-auto-module").then(__webpack_require__.bind(null, /*! ./peso-auto/peso-auto.module */ "./src/app/peso-auto/peso-auto.module.ts")).then(m => m.PesoAutoPageModule)
+    },
+    {
+        path: 'rapidez-goteos',
+        loadChildren: () => __webpack_require__.e(/*! import() | rapidez-goteos-rapidez-goteos-module */ "rapidez-goteos-rapidez-goteos-module").then(__webpack_require__.bind(null, /*! ./rapidez-goteos/rapidez-goteos.module */ "./src/app/rapidez-goteos/rapidez-goteos.module.ts")).then(m => m.RapidezGoteosPageModule)
+    },
+    {
+        path: 'rapidez-auto',
+        loadChildren: () => __webpack_require__.e(/*! import() | rapidez-auto-rapidez-auto-module */ "rapidez-auto-rapidez-auto-module").then(__webpack_require__.bind(null, /*! ./rapidez-auto/rapidez-auto.module */ "./src/app/rapidez-auto/rapidez-auto.module.ts")).then(m => m.RapidezAutoPageModule)
+    },
+    {
+        path: 'solucion-madre',
+        loadChildren: () => __webpack_require__.e(/*! import() | solucion-madre-solucion-madre-module */ "solucion-madre-solucion-madre-module").then(__webpack_require__.bind(null, /*! ./solucion-madre/solucion-madre.module */ "./src/app/solucion-madre/solucion-madre.module.ts")).then(m => m.SolucionMadrePageModule)
+    },
+    {
+        path: 'desinfeccion',
+        loadChildren: () => __webpack_require__.e(/*! import() | desinfeccion-desinfeccion-module */ "desinfeccion-desinfeccion-module").then(__webpack_require__.bind(null, /*! ./desinfeccion/desinfeccion.module */ "./src/app/desinfeccion/desinfeccion.module.ts")).then(m => m.DesinfeccionPageModule)
+    },
+    {
+        path: 'vr-cuadrado',
+        loadChildren: () => __webpack_require__.e(/*! import() | vr-cuadrado-vr-cuadrado-module */ "vr-cuadrado-vr-cuadrado-module").then(__webpack_require__.bind(null, /*! ./vr-cuadrado/vr-cuadrado.module */ "./src/app/vr-cuadrado/vr-cuadrado.module.ts")).then(m => m.VrCuadradoPageModule)
+    },
+    {
+        path: 'vr-cilindro',
+        loadChildren: () => __webpack_require__.e(/*! import() | vr-cilindro-vr-cilindro-module */ "vr-cilindro-vr-cilindro-module").then(__webpack_require__.bind(null, /*! ./vr-cilindro/vr-cilindro.module */ "./src/app/vr-cilindro/vr-cilindro.module.ts")).then(m => m.VrCilindroPageModule)
+    },
+    {
+        path: 'cloro-botella',
+        loadChildren: () => __webpack_require__.e(/*! import() | cloro-botella-cloro-botella-module */ "cloro-botella-cloro-botella-module").then(__webpack_require__.bind(null, /*! ./cloro-botella/cloro-botella.module */ "./src/app/cloro-botella/cloro-botella.module.ts")).then(m => m.CloroBotellaPageModule)
+    },
+    {
+        path: 'estimacion-rapidez',
+        loadChildren: () => __webpack_require__.e(/*! import() | estimacion-rapidez-estimacion-rapidez-module */ "estimacion-rapidez-estimacion-rapidez-module").then(__webpack_require__.bind(null, /*! ./estimacion-rapidez/estimacion-rapidez.module */ "./src/app/estimacion-rapidez/estimacion-rapidez.module.ts")).then(m => m.EstimacionRapidezPageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -573,6 +613,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm2015/service-worker.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+
+
 
 
 
@@ -589,7 +633,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"], _angular_service_worker__WEBPACK_IMPORTED_MODULE_10__["ServiceWorkerModule"].register('ngsw-worker.js', { enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].production })],
         providers: [
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_7__["StatusBar"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_6__["SplashScreen"],
