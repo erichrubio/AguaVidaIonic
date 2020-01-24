@@ -1,4 +1,0 @@
-#Fri Dec 20 12:25:14 PET 2019
-base.0=/Users/ericr/Desktop/agua_vida/agua_vida_ionic/platforms/android/app/build/intermediates/transforms/dexMerger/release/0
-path.0=classes.dex
-renamed.0=classes.dex
